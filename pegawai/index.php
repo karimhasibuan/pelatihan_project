@@ -6,7 +6,7 @@ include '../config/db.php';
 
 if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
     echo "Anda harus login terlebih dahulu!";
-    echo "<meta http-equiv='refresh' content='0;url:../login.php'>";
+    echo "<a href='../login.php'>Login</a>";
 } else {
     define('INDEX', true);
 ?>
