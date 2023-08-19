@@ -9,8 +9,14 @@
 
 <body>
     <form action="ceklogin.php" method="post">
-        <input type="text" name="username" id="username">
-        <input type="password" name="password" id="password">
+        <div>
+            <label for="">Username</label>
+            <input type="text" name="username" id="username" placeholder="Masukkan username anda">
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="password" name="password" id="password" placeholder="Masukkan password anda">
+        </div>
         <button type="submit">MASUK</button>
     </form>
 </body>
