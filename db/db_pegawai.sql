@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2023 at 03:00 AM
+-- Generation Time: Aug 19, 2023 at 02:20 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jabatan`
+--
+
+CREATE TABLE `jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `nama_jabatan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jabatan`
+--
+
+INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
+(1, 'Manager'),
+(2, 'Kepala Divisi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pegawai`
 --
 
@@ -31,15 +50,16 @@ CREATE TABLE `pegawai` (
   `id_pegawai` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `nama_pegawai` varchar(255) NOT NULL,
-  `jabatan_pegawai` varchar(255) NOT NULL
+  `id_jabatan` int(11) NOT NULL,
+  `no_hp` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`id_pegawai`, `id_user`, `nama_pegawai`, `jabatan_pegawai`) VALUES
-(1, 2, 'Hendra', 'Manager');
+INSERT INTO `pegawai` (`id_pegawai`, `id_user`, `nama_pegawai`, `id_jabatan`, `no_hp`) VALUES
+(1, 2, 'Hendra', 1, '08');
 
 -- --------------------------------------------------------
 
@@ -69,6 +89,12 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `role`) VALUES
 --
 
 --
+-- Indexes for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
 -- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
@@ -83,6 +109,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
