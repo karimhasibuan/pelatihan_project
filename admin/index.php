@@ -23,6 +23,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
     <body>
         <h1>Halo, <?= $_SESSION['username']; ?></h1>
         <div>
+            <h2>DATA PEGAWAI</h2>
             <table border="1">
                 <thead>
                     <th>No</th>
@@ -44,6 +45,35 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
                             <td><?= $data['nama_pegawai']; ?></td>
                             <td><?= $data['nama_jabatan']; ?></td>
                             <td><?= $data['no_hp']; ?></td>
+                        </tr>
+
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h2>DATA JABATAN</h2>
+            <a href="#">Tambah Jabatan</a>
+            <table border="1">
+                <thead>
+                    <th>No</th>
+                    <th>Nama Jabatan</th>
+                    <th>Kelola</th>
+                </thead>
+                <tbody>
+                    <?php
+                    $query = mysqli_query($koneksi, "SELECT * FROM jabatan");
+                    $no = 0;
+                    while ($data = mysqli_fetch_array($query)) {
+                        $no++;
+                    ?>
+                        <tr>
+                            <td><?= $no; ?></td>
+                            <td><?= $data['nama_jabatan']; ?></td>
+                            <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
                         </tr>
 
                     <?php
