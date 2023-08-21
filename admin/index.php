@@ -56,7 +56,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
 
         <div>
             <h2>DATA JABATAN</h2>
-            <a href="#">Tambah Jabatan</a>
+            <a href="jabatan_tambah.php">Tambah Jabatan</a>
             <table border="1">
                 <thead>
                     <th>No</th>
@@ -73,7 +73,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
                         <tr>
                             <td><?= $no; ?></td>
                             <td><?= $data['nama_jabatan']; ?></td>
-                            <td><a href="#">Edit</a> | <a href="#">Hapus</a></td>
+                            <td><a href="jabatan_edit.php?id=<?= $data['id_jabatan']; ?>">Edit</a> | <a href="jabatan_hapus.php?id=<?= $data['id_jabatan']; ?>">Hapus</a></td>
                         </tr>
 
                     <?php
